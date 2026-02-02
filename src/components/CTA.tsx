@@ -1,21 +1,40 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { gsap, ScrollTrigger } from "@/lib/animations";
 
 export default function CTA() {
+    const container = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(container.current, {
+                opacity: 0,
+                scale: 0.9,
+                y: 40,
+                duration: 1.2,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: "top 80%"
+                }
+            });
+        }, container);
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="py-40 flex flex-col items-center justify-center text-center border-t border-white/20 mt-0 bg-white text-black">
-            <div className="container-width">
-                <h2 className="text-[14vw] md:text-[11vw] leading-[0.8] font-black uppercase tracking-tighter mb-16 select-none">
-                    Start Engineering
-                </h2>
-                <div className="flex flex-col items-center gap-12">
-                    <p className="max-w-3xl text-2xl md:text-3xl opacity-60 font-medium leading-relaxed tracking-tight">
-                        Ready to build scalable digital products? Partner with Coretech Labs for precision engineering.
-                    </p>
-                    <button className="flex items-center gap-6 bg-black text-white px-16 py-8 rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition-all duration-300 shadow-2xl">
-                        Initialize Project
-                        <ArrowRight className="w-6 h-6" />
-                    </button>
-                </div>
+        <section ref={container} className="py-32 bg-gradient-to-t from-[#1A1A2E] to-black relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+            <div className="container-width max-w-4xl mx-auto text-center relative z-10">
+                <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">Ready to Scale Your <br /> Digital Infrastructure?</h2>
+                <p className="text-xl text-white/60 mb-10">Book a free consultation with our engineering team.</p>
+
+                <button className="px-10 py-5 rounded-full bg-gradient-to-r from-[#9D4EDD] to-[#7209B7] text-white font-bold text-lg hover:scale-105 transition shadow-2xl shadow-purple-600/40 flex items-center gap-3 mx-auto">
+                    Book a Free Call
+                    <ArrowRight className="w-5 h-5" />
+                </button>
             </div>
         </section>
     );

@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Coretech Labs | Digital Engineering Studio",
-  description: "Building scalable digital products with clean architecture and precision engineering.",
+  title: "XTRACT | Intelligent Automation",
+  description: "Xtract brings AI automation to your digital products. Streamline development, optimize scale, and reduce overhead.",
 };
 
 export default function RootLayout({

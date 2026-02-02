@@ -1,5 +1,6 @@
-// import gsap from "gsap";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const animateHero = () => {
-    // Placeholder for hero animation
-};
+gsap.registerPlugin(ScrollTrigger);
+
+export { gsap, ScrollTrigger };
