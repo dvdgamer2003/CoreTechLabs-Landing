@@ -63,19 +63,17 @@ export default function HeroBackground() {
             let drawWidth, drawHeight, offsetX, offsetY;
 
             if (canvasRatio > imgRatio) {
-                // Canvas is wider than image (e.g. Desktop vs 4:3 image, or Mobile Landscape)
-                // Fit Height, center horizontally
-                drawHeight = canvas.height;
-                drawWidth = canvas.height * imgRatio;
-                offsetX = (canvas.width - drawWidth) / 2;
-                offsetY = 0;
-            } else {
-                // Canvas is taller than image (e.g. Mobile Portrait vs 16:9 image)
-                // Fit Width, center vertically
+                // Canvas is wider than image -> Fit Width, crop Height (Cover)
                 drawWidth = canvas.width;
                 drawHeight = canvas.width / imgRatio;
                 offsetX = 0;
                 offsetY = (canvas.height - drawHeight) / 2;
+            } else {
+                // Canvas is taller than image -> Fit Height, crop Width (Cover)
+                drawHeight = canvas.height;
+                drawWidth = canvas.height * imgRatio;
+                offsetX = (canvas.width - drawWidth) / 2;
+                offsetY = 0;
             }
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -50,7 +50,7 @@ export default function LogoCloud() {
 
     return (
         <section ref={containerRef} className="py-16 bg-black text-center border-b border-white/5 overflow-hidden">
-            <p className="trust-text text-white/40 text-sm font-medium mb-12 uppercase tracking-widest">Trusted by growing businesses</p>
+            <p className="trust-text text-white/40 text-sm font-medium mb-12 uppercase tracking-widest">Over 50+ business trust us</p>
 
             <div className="logo-track relative w-full overflow-hidden">
                 <div className="flex gap-16 items-center justify-center whitespace-nowrap animate-marquee w-max">

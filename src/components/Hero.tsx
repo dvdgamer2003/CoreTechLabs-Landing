@@ -62,7 +62,7 @@ export default function Hero() {
                     {/* 3. Badge */}
                     <div className="hero-badge inline-flex items-center gap-3 bg-white/[0.03] border border-white/10 rounded-full pl-1.5 pr-4 py-1.5 mb-8 hover:bg-white/[0.05] transition cursor-pointer">
                         <span className="bg-[#9D4EDD] text-white text-[13px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">New</span>
-                        <span className="text-[14px] text-white whitespace-nowrap">Intelligent Systems</span>
+                        <span className="text-[14px] text-white whitespace-nowrap">Automated Lead Generation</span>
                     </div>
 
                     {/* 4. Headline with Word Split */}

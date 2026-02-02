@@ -25,41 +25,117 @@ export default function Services() {
     return (
         <section id="services" className="py-24 bg-black text-white px-6">
             <div className="container-width max-w-7xl mx-auto">
-                {/* Section 2: Services Header */}
+                {/* Header */}
                 <div className="mb-20 space-y-4 text-center md:text-left">
                     <span className="inline-block px-4 py-1.5 rounded-md bg-[#1F1F3F] text-white text-[14px] font-semibold mb-6">Our Services</span>
-                    <h3 className="text-4xl md:text-[56px] font-bold leading-[1.3] mb-4">Scalable Solutions for <br /> Modern Enterprises</h3>
-                    <p className="text-[#D1D5DB] text-[16px] max-w-2xl">We engineer digital ecosystems that drive growth, efficiency, and innovation.</p>
+                    <h3 className="text-4xl md:text-[56px] font-bold leading-[1.1] mb-4">AI Solutions That Take Your <br /> Business to the Next Level</h3>
+                    <p className="text-[#D1D5DB] text-[16px] max-w-2xl">We design, develop, and implement automation tools that help you work smarter, not harder.</p>
                 </div>
 
-                {/* Section 3: Tasks & Workflows */}
+                {/* Section 1: Workflow & AI Assistant */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    {/* Card 1: Task Management */}
+                    {/* Card 1: Workflow Automation (Already Updated) */}
                     <div className="service-card bg-[#1A1A2E] p-7 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] hover:shadow-[0_20px_40px_rgba(157,78,221,0.15)] hover:-translate-y-1 transition-all duration-300 min-h-[400px]">
-                        <div className="flex justify-between items-center mb-6 pb-5 border-b border-[#2D3748]">
-                            <h4 className="text-[14px] font-bold uppercase tracking-wider">System Operations</h4>
-                            <span className="text-[12px] text-[#A0AEC0]">Live Status</span>
+                        <div className="flex items-center gap-2 mb-6 pb-5 border-b border-[#2D3748]">
+                            <div className="px-3 py-1.5 rounded-md bg-white/5 text-white text-[12px] font-medium border border-[#2D3748]">All Tasks</div>
+                            <div className="px-3 py-1.5 rounded-md text-[#A0AEC0] text-[12px] font-medium hover:text-white transition-colors cursor-pointer">Waiting for approval</div>
                         </div>
                         <div className="space-y-4">
-                            <TaskItem icon={Layers} title="Database Optimization" sub="Completed 2m ago" status="completed" />
-                            <TaskItem icon={Shield} title="Security Audit" sub="In Progress" status="progress" />
-                            <TaskItem icon={Code} title="API Integration" sub="Pending Review" status="pending" />
-                            <TaskItem icon={Zap} title="Cache Cleanup" sub="Scheduled: 12:00 AM" status="pending" />
-                            <TaskItem icon={BarChart} title="Daily Analytics" sub="Generating Report..." status="progress" />
+                            <TaskItem icon={Layers} title="Payroll management" sub="Due on 2nd july" status="completed" />
+                            <TaskItem icon={Shield} title="Employee Tracking" sub="2 days ago" status="progress" />
+                            <TaskItem icon={MessageSquare} title="Social media post" sub="Cancelled by user" status="cancelled" />
+                            <TaskItem icon={Zap} title="Lead list" sub="70% prepared" status="pending" />
+                            <TaskItem icon={BarChart} title="Payment reminder" sub="sent to selected clients" status="progress" />
+                        </div>
+                        <div className="mt-8">
+                            <div className="text-[12px] uppercase text-[#9D4EDD] tracking-widest mb-3 font-bold border border-[#2D3748] inline-block px-3 py-1 rounded-md">Workflow Automation</div>
+                            <h4 className="text-[32px] font-bold mb-4 text-white leading-tight">Automate repetitive workflows</h4>
+                            <p className="text-[#A0AEC0] text-[15px] leading-[1.6]">We help you streamline internal operations by automating manual workflows like data entry, reporting, and approval chains.</p>
                         </div>
                     </div>
 
-                    {/* Card 2: Workflow Automation */}
-                    <div className="service-card bg-[#1A1A2E] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[400px]">
-                        <div>
-                            <div className="text-[12px] uppercase text-[#9D4EDD] tracking-widest mb-3 font-bold">Automation Patterns</div>
-                            <h4 className="text-[32px] font-bold mb-4 text-white">Streamline Complex Workflows</h4>
-                            <p className="text-[#A0AEC0] text-[15px] leading-[1.6] mb-8">Deploy intelligent bots and scripts to handle redundant processes, ensuring your team focuses on high-impact engineering.</p>
+                    {/* Card 2: AI Assistant */}
+                    <div className="service-card bg-[#0D0D15] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[400px] overflow-hidden relative">
+                        {/* Interactive Chat UI */}
+                        <div className="absolute top-8 right-8 left-8 bottom-40 bg-[#000000] border border-[#2D3748] rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-2xl">
+                            <div className="w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center mb-4 relative">
+                                <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full animate-pulse" />
+                                <div className="w-8 h-8 bg-gradient-to-tr from-purple-500 to-indigo-500 rounded-full animate-spin-slow" />
+                            </div>
+                            <h5 className="text-lg font-medium text-white mb-2">What can I help with?</h5>
+                            <p className="text-xs text-gray-500 max-w-[200px] mb-6">Weather you want help in customer handling or make changes in your system just give me command</p>
+
+                            <div className="w-full bg-[#1A1A2E] border border-white/5 rounded-lg p-3 flex items-center justify-between">
+                                <div className="text-xs text-gray-500 flex items-center gap-2">
+                                    <span className="w-4 h-4 rounded-full bg-white/10 text-[8px] flex items-center justify-center">Pr</span>
+                                    + Add document
+                                </div>
+                                <ArrowUpRight className="w-4 h-4 text-purple-500" />
+                            </div>
                         </div>
-                        <div className="flex gap-3 mt-4">
-                            <span className="px-4 py-2 bg-[#2D3748] rounded-md text-white text-[13px]">AI-Driven</span>
-                            <span className="px-4 py-2 bg-[#2D3748] rounded-md text-white text-[13px]">Scalable</span>
-                            <span className="px-4 py-2 bg-[#2D3748] rounded-md text-white text-[13px]">Secure</span>
+
+                        <div className="mt-[320px] relative z-10">
+                            <div className="text-[12px] uppercase text-[#9D4EDD] tracking-widest mb-3 font-bold border border-[#2D3748] inline-block px-3 py-1 rounded-md">AI Assistant</div>
+                            <h4 className="text-[32px] font-bold mb-4 text-white leading-tight">Delegate Daily Tasks</h4>
+                            <p className="text-[#A0AEC0] text-[15px] leading-[1.6] mb-6">From managing calendars to drafting emails and summarizing meetings, our AI assistants work around the clock.</p>
+                            <div className="flex flex-wrap gap-2">
+                                {['Summaries', 'Scheduling', 'Many more'].map(tag => (
+                                    <span key={tag} className="px-3 py-1.5 rounded-lg bg-[#1A1A2E] border border-[#2D3748] text-xs text-gray-300">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Section 2: Sales & Custom Projects */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Card 3: Sales & Marketing */}
+                    <div className="service-card bg-[#1A1A2E] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] hover:-translate-y-1 transition-all duration-300 min-h-[400px]">
+                        {/* Email / Lead UI Mockup */}
+                        <div className="bg-[#0D0D15] rounded-xl border border-[#2D3748] p-5 mb-8">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs">JD</div>
+                                <div>
+                                    <div className="text-sm font-bold text-white">Jack Daniel</div>
+                                    <div className="text-[10px] text-gray-500">Founder</div>
+                                </div>
+                                <div className="ml-auto px-2 py-0.5 bg-green-500/10 text-green-500 text-[10px] rounded border border-green-500/20">Verified</div>
+                            </div>
+                            <div className="h-px bg-[#2D3748] w-full my-3" />
+                            <div className="flex justify-between items-center text-[10px] text-gray-500">
+                                <span>Draft</span>
+                                <span className="text-[#9D4EDD]">Schedule</span>
+                                <span>Sent</span>
+                            </div>
+                            <div className="relative w-full h-1 bg-[#2D3748] rounded-full mt-2">
+                                <div className="absolute left-0 top-0 h-full w-1/2 bg-[#9D4EDD] rounded-full" />
+                                <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#9D4EDD] rounded-full shadow-[0_0_10px_#9D4EDD]" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="text-[12px] uppercase text-[#9D4EDD] tracking-widest mb-3 font-bold border border-[#2D3748] inline-block px-3 py-1 rounded-md">Sales & Marketing</div>
+                            <h4 className="text-[32px] font-bold mb-4 text-white leading-tight">Accelerate Sales Growth</h4>
+                            <p className="text-[#A0AEC0] text-[15px] leading-[1.6] mb-6">AI tools for lead generation, personalized outreach, and automated content creation that scales your sales efforts.</p>
+                            <div className="flex flex-wrap gap-2">
+                                {['Leads', 'Content', 'Social post'].map(tag => (
+                                    <span key={tag} className="px-3 py-1.5 rounded-lg bg-[#0D0D15] border border-[#2D3748] text-xs text-gray-300">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Card 4: Custom Projects */}
+                    <div className="service-card bg-[#000000] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-end min-h-[400px] relative overflow-hidden group">
+                        {/* Abstract Background Visual */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+                        <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] blend-overlay" />
+                        <div className="absolute -right-20 -top-20 w-64 h-64 bg-purple-600/20 blur-[100px] rounded-full" />
+
+                        <div className="relative z-20">
+                            <div className="text-[12px] uppercase text-[#9D4EDD] tracking-widest mb-3 font-bold border border-[#2D3748] inline-block px-3 py-1 rounded-md bg-black">Custom Projects</div>
+                            <h4 className="text-[32px] font-bold mb-4 text-white leading-tight">Build Smarter Systems</h4>
+                            <p className="text-[#A0AEC0] text-[15px] leading-[1.6]">Whether you're starting from scratch or enhancing an existing system, we offer strategic consulting and develop custom AI projects.</p>
                         </div>
                     </div>
                 </div>
@@ -67,64 +143,17 @@ export default function Services() {
                 {/* Section 4: AI Assistant, Founders, Sales */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     {/* Card 1: AI Assistant */}
-                    <div className="service-card bg-[#1A1A2E] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] transition-all duration-300 md:col-span-1">
-                        <h4 className="text-xl font-bold mb-4">AI Copilots</h4>
-                        <div className="bg-black/30 p-4 rounded-lg h-[200px] flex flex-col justify-end space-y-2 border border-white/5">
-                            <div className="self-start bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 rounded-bl-none">Analyzing metrics...</div>
-                            <div className="self-end bg-[#9D4EDD] px-3 py-2 rounded-lg text-xs text-white rounded-br-none">Report generated.</div>
-                        </div>
-                    </div>
+                    {/* This card was replaced by the new structure above */}
 
                     {/* Card 2: Founders / Leadership */}
                     <FoundersCard />
 
                     {/* Card 3: Sales & Marketing */}
-                    <div className="service-card bg-[#1A1A2E] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] transition-all duration-300 md:col-span-1">
-                        <h4 className="text-xl font-bold mb-4">Growth Engines</h4>
-                        <ul className="space-y-3">
-                            {['Lead Scoring', 'Automated Outreach', 'CRM Sync', 'Performance Tracking'].map(item => (
-                                <li key={item} className="flex items-center gap-2 text-sm text-[#A0AEC0]">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#9D4EDD]" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    {/* This card was replaced by the new structure above */}
                 </div>
 
                 {/* Section 5: Custom Projects */}
-                <div className="service-card bg-[#1A1A2E] p-8 rounded-xl border border-[#2D3748] hover:border-[#9D4EDD] transition-all duration-300 flex flex-col md:flex-row gap-8">
-                    <div className="flex-1">
-                        <div className="text-[12px] uppercase text-[#9D4EDD] tracking-widest mb-3 font-bold">Custom Development</div>
-                        <h4 className="text-[32px] font-bold mb-4">Enterprise Architectures</h4>
-                        <p className="text-[#A0AEC0] mb-6 max-w-md">Bespoke software solutions architected for high availability, security, and massive scale.</p>
-                        <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                            <span className="text-sm font-medium text-white">System Operational</span>
-                        </div>
-                    </div>
-
-                    <div className="flex-1 bg-black/20 border border-white/5 rounded-xl p-6 relative overflow-hidden">
-                        <div className="flex justify-between items-center mb-6">
-                            <div className="text-sm font-bold">Project Alpha</div>
-                            <div className="text-xs text-[#9D4EDD] bg-[#9D4EDD]/10 px-2 py-1 rounded">In Progress</div>
-                        </div>
-                        <div className="space-y-4">
-                            <div className="flex justify-between text-xs text-white/60 mb-1">
-                                <span>Progress</span>
-                                <span>85%</span>
-                            </div>
-                            <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                                <div className="h-full bg-[#9D4EDD] w-[85%]" />
-                            </div>
-                            <div className="grid grid-cols-7 gap-1 mt-4">
-                                {[...Array(14)].map((_, i) => (
-                                    <div key={i} className={`h-6 rounded-sm ${i % 2 === 0 ? 'bg-[#9D4EDD]/40' : 'bg-white/5'}`} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/* This card was replaced by the new structure above */}
 
             </div>
         </section>
